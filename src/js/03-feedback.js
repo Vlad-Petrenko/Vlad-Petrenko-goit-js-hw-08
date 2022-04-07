@@ -31,8 +31,10 @@ function addFormSubmit(event) {
 function feedbackTextArea() {
   const savedMessage = localStorage.getItem(STORAGE_KEY);
   const parsedMessage = JSON.parse(savedMessage);
-  if (parsedMessage) {
+  if (parsedMessage.message) {
     refs.textarea.value = parsedMessage.message;
+  }
+  if (parsedMessage.email) {
     refs.emailText.value = parsedMessage.email;
   }
 }
