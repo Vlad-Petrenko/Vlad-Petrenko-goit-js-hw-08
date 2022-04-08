@@ -18,7 +18,10 @@ function addTextAndEmailInput() {
 
 function addFormSubmit(event) {
   event.preventDefault();
-  console.log(formData);
+
+  const formObject = localStorage.getItem(STORAGE_KEY);
+  console.log(JSON.parse(formObject));
+
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
